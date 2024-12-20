@@ -13,7 +13,7 @@
                     <span class="text-2xl font-bold text-indigo-600">SeedZ</span>
                 </div>
                 <div class="flex items-center space-x-4">
-                    <a href="index.html" class="text-gray-600 hover:text-indigo-600">Back to Module</a>
+                    <a  href="module.html" class="text-gray-600 hover:text-indigo-600">Back to Module</a>
                 </div>
             </div>
         </div>
@@ -60,6 +60,38 @@
                     </div>
                 </div>
 
+                <div>
+                    <h2 class="text-lg font-medium text-gray-900">3. True or False: Startups always operate in the technology industry.</h2>
+                    <div class="mt-2 space-y-2">
+                        <label class="flex items-center">
+                            <input type="radio" name="question3" value="true" class="h-4 w-4 text-indigo-600 border-gray-300">
+                            <span class="ml-2 text-gray-700">True</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="question3" value="false" class="h-4 w-4 text-indigo-600 border-gray-300">
+                            <span class="ml-2 text-gray-700">False</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div>
+                    <h2 class="text-lg font-medium text-gray-900">4. Which of these is an example of a successful startup?</h2>
+                    <div class="mt-2 space-y-2">
+                        <label class="flex items-center">
+                            <input type="radio" name="question4" value="a" class="h-4 w-4 text-indigo-600 border-gray-300">
+                            <span class="ml-2 text-gray-700">A family-owned restaurant</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="question4" value="b" class="h-4 w-4 text-indigo-600 border-gray-300">
+                            <span class="ml-2 text-gray-700">Airbnb</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="question4" value="c" class="h-4 w-4 text-indigo-600 border-gray-300">
+                            <span class="ml-2 text-gray-700">A large bank</span>
+                        </label>
+                    </div>
+                </div>
+
                 <button type="button" onclick="submitQuiz()" class="mt-4 px-4 py-2 text-white bg-indigo-600 rounded-md hover:bg-indigo-700">
                     Submit Quiz
                 </button>
@@ -71,3 +103,46 @@
             </div>
         </div>
     </main>
+
+    <script>
+        const correctAnswers = {
+            question1: "c",
+            question2: "b",
+            question3: "false",
+            question4: "b"
+        };
+    
+        function submitQuiz() {
+            const form = document.getElementById('quizForm');
+            const formData = new FormData(form);
+            let score = 0;
+            let totalQuestions = Object.keys(correctAnswers).length;
+    
+            document.querySelectorAll('label').forEach(label => {
+                label.style.backgroundColor = '';
+            });
+    
+            for (const question in correctAnswers) {
+                const selected = form.querySelector(`input[name="${question}"]:checked`);
+                const correct = form.querySelector(`input[name="${question}"][value="${correctAnswers[question]}"]`);
+    
+                if (selected) {
+                    if (selected.value === correctAnswers[question]) {
+                        score++;
+                        selected.parentElement.style.backgroundColor = '#d4edda'; 
+                    } else {
+                        selected.parentElement.style.backgroundColor = '#f8d7da'; 
+                    }
+                }
+    
+                if (correct) {
+                    correct.parentElement.style.backgroundColor = '#d4edda'; 
+                }
+            }
+    
+            const result = document.getElementById('result');
+            const scoreText = document.getElementById('score');
+            scoreText.textContent = `You scored ${score} out of ${totalQuestions}`;
+            result.classList.remove('hidden');
+        }
+    </script>

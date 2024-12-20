@@ -1,0 +1,73 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz - SeedZ</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50">
+    <nav class="bg-white shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <span class="text-2xl font-bold text-indigo-600">SeedZ</span>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a href="index.html" class="text-gray-600 hover:text-indigo-600">Back to Module</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
+        <div class="bg-white shadow rounded-lg p-6">
+            <h1 class="text-3xl font-bold text-gray-900">Quiz: Introduction to Startups</h1>
+            <p class="mt-2 text-gray-600">Answer the following questions:</p>
+            <form id="quizForm" class="space-y-6 mt-6">
+                <div>
+                    <h2 class="text-lg font-medium text-gray-900">1. What is a startup?</h2>
+                    <div class="mt-2 space-y-2">
+                        <label class="flex items-center">
+                            <input type="radio" name="question1" value="a" class="h-4 w-4 text-indigo-600 border-gray-300">
+                            <span class="ml-2 text-gray-700">A new business that operates in a traditional market</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="question1" value="b" class="h-4 w-4 text-indigo-600 border-gray-300">
+                            <span class="ml-2 text-gray-700">An established company with steady growth</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="question1" value="c" class="h-4 w-4 text-indigo-600 border-gray-300">
+                            <span class="ml-2 text-gray-700">A young company aiming for fast growth in a scalable market</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div>
+                    <h2 class="text-lg font-medium text-gray-900">2. What is a key characteristic of a startup?</h2>
+                    <div class="mt-2 space-y-2">
+                        <label class="flex items-center">
+                            <input type="radio" name="question2" value="a" class="h-4 w-4 text-indigo-600 border-gray-300">
+                            <span class="ml-2 text-gray-700">Steady growth over a long period</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="question2" value="b" class="h-4 w-4 text-indigo-600 border-gray-300">
+                            <span class="ml-2 text-gray-700">High uncertainty and potential for rapid growth</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="question2" value="c" class="h-4 w-4 text-indigo-600 border-gray-300">
+                            <span class="ml-2 text-gray-700">Operating in a local market</span>
+                        </label>
+                    </div>
+                </div>
+
+                <button type="button" onclick="submitQuiz()" class="mt-4 px-4 py-2 text-white bg-indigo-600 rounded-md hover:bg-indigo-700">
+                    Submit Quiz
+                </button>
+            </form>
+
+            <div id="result" class="hidden mt-6 bg-gray-100 p-4 rounded-lg">
+                <h2 class="text-xl font-bold text-gray-900">Your Score</h2>
+                <p id="score" class="mt-2 text-gray-700"></p>
+            </div>
+        </div>
+    </main>

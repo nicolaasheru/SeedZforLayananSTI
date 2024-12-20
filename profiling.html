@@ -11,12 +11,11 @@
     <main class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
         <div class="px-4 py-6 sm:px-0">
             <h1 class="text-3xl font-bold text-gray-900">Let's craft your personalized curriculum</h1>
-            <p class="mt-2 text-gray-600">Answer these questions to customize your learning journey.</p>
             
             <form class="mt-8 space-y-8">
                 <!-- Question 1 -->
                 <div>
-                    <h2 class="text-lg font-medium text-gray-900 mb-4">1. What do you want to do?</h2>
+                    <h2 class="text-lg font-bold text-gray-900 mb-4">What do you want to do?</h2>
                     <div class="flex gap-4">
                         <label class="block bg-white shadow rounded-lg p-4 text-center cursor-pointer ">
                             <input type="radio" name="q1" value="validate" class="hidden option" data-group="q1">
@@ -35,39 +34,40 @@
                 
                 <!-- Question 2 -->
                 <div>
-                    <h2 class="text-lg font-medium text-gray-900 mb-4">2. What industry of startup do you want to create?</h2>
+                    <h2 class="text-lg font-bold text-gray-900 mb-4">What industry of startup do you want to create?</h2>
                     <div class="flex gap-4">
                         <label class="block bg-white shadow rounded-lg p-4 text-center cursor-pointer ">
                             <input type="radio" name="q2" value="tech" class="hidden option" data-group="q2">
-                            <p class="font-medium text-gray-900">Technology (e.g., SaaS, AI, Web3)</p>
+                            <p class="font-medium text-gray-900">Technology</p>
                         </label>
                         <label class="block bg-white shadow rounded-lg p-4 text-center cursor-pointer ">
                             <input type="radio" name="q2" value="lifestyle" class="hidden option" data-group="q2">
-                            <p class="font-medium text-gray-900">Lifestyle (e.g., fashion, wellness, creative industries)</p>
+                            <p class="font-medium text-gray-900">Fashion</p>
                         </label>
                         <label class="block bg-white shadow rounded-lg p-4 text-center cursor-pointer ">
                             <input type="radio" name="q2" value="social_impact" class="hidden option" data-group="q2">
-                            <p class="font-medium text-gray-900">Social Impact (e.g., sustainability, education, healthcare)</p>
+                            <p class="font-medium text-gray-900">Social Impact</p>
                         </label>
                     </div>
                 </div>
                 
                 <!-- Question 3 -->
                 <div>
-                    <h2 class="text-lg font-medium text-gray-900 mb-4">3. What specific area do you want to learn?</h2>
+                    <h2 class="text-lg font-bold text-gray-900 mb-4">What specific area do you want to learn?</h2>
                     <div class="flex gap-4">
                         <label class="block bg-white shadow rounded-lg p-4 text-center cursor-pointer ">
                             <input type="radio" name="q3" value="strategy" class="hidden option" data-group="q3">
-                            <p class="font-medium text-gray-900">Business strategy and market validation</p>
+                            <p class="font-medium text-gray-900">Marketing strategy</p>
                         </label>
                         <label class="block bg-white shadow rounded-lg p-4 text-center cursor-pointer ">
                             <input type="radio" name="q3" value="product_dev" class="hidden option" data-group="q3">
-                            <p class="font-medium text-gray-900">Product development and prototyping</p>
+                            <p class="font-medium text-gray-900">Product development</p>
                         </label>
                         <label class="block bg-white shadow rounded-lg p-4 text-center cursor-pointer ">
                             <input type="radio" name="q3" value="fundraising" class="hidden option" data-group="q3">
-                            <p class="font-medium text-gray-900">Fundraising and pitching</p>
+                            <p class="font-medium text-gray-900">Financial planning</p>
                         </label>
+                        
                     </div>
                 </div>
                 
@@ -89,17 +89,7 @@
                 // Get the group of the clicked option
                 const group = option.dataset.group;
     
-                // Reset the style of all options in the same group
-                document.querySelectorAll(`.option[data-group="${group}"]`).forEach(opt => {
-                    const parentLabel = opt.parentElement;
-                    const text = parentLabel.querySelector('p');
-                    parentLabel.classList.remove('bg-indigo-600', 'text-white');
-                    parentLabel.classList.add('bg-white', 'text-gray-900');
-                    text.classList.remove('text-white');
-                    text.classList.add('text-gray-900');
-                });
-    
-                // Apply the selected style to the clicked option
+                // Clicked option
                 const parentLabel = option.parentElement;
                 const text = parentLabel.querySelector('p');
                 parentLabel.classList.remove('bg-white', 'text-gray-900');
@@ -135,7 +125,7 @@
 
         document.getElementById('submit-btn').addEventListener('click', (event) => {
             event.preventDefault(); // Prevent the default form submission
-            window.location.href = 'dashboard.html'; // Redirect to dashboard.html
+            window.location.href = 'dashboardnew.html'; // Redirect to dashboard.html
         });
 
     </script>

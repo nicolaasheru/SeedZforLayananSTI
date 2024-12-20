@@ -8,6 +8,14 @@
 </head>
 <body class="bg-gray-50">
     <div class="min-h-screen flex flex-col justify-center py-12 sm:px-6 lg:px-8">
+
+        <!-- Back Button -->
+        <div class="mb-6">
+            <a href="index.html" class="text-gray-900 hover:text-indigo-500 font-medium text-sm">
+                &larr; Back to Home
+            </a>
+        </div>
+        
         <div class="sm:mx-auto sm:w-full sm:max-w-md">
             <a href="index.html" class="flex justify-center text-2xl font-bold text-indigo-600">SeedZ</a>
             <h2 class="mt-6 text-center text-3xl font-extrabold text-gray-900">
@@ -17,7 +25,8 @@
 
         <div class="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
             <div class="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10">
-                <form class="space-y-6" action="profiling.html" method="GET">
+
+                <form class="space-y-6" onsubmit="saveFirstName()" action="profiling.html" method="GET" >
                     <div class="grid grid-cols-1 gap-6">
                         <div class="col-span-1">
                             <label for="first-name" class="block text-sm font-medium text-gray-700">
@@ -69,6 +78,15 @@
                         </button>
                     </div>
                 </form>
+
+                <script>
+                    function saveFirstName(event) {
+                        event.preventDefault(); // Prevent form submission to allow saving first name
+                        const firstName = document.getElementById('first-name').value;
+                        localStorage.setItem('firstName', firstName); // Save the first name to localStorage
+                        window.location.href = "dashboardnew.html"; // Redirect to dashboard after saving
+                    }
+                </script>
 
                 <div class="mt-6">
                     <div class="relative">
